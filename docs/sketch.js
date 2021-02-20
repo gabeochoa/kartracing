@@ -69,7 +69,6 @@ class Car {
 let kart;
 let friend;
 
-
 function handle_input(){
   let dx = 0;
   let dy = 0;
@@ -90,6 +89,9 @@ function handle_input(){
 
 //////////////////////
 
+let leftInterval = null;
+let rightInterval = null;
+
 let p = null;
 let peerIdSpan = null;
 function peerstuff(){
@@ -99,6 +101,16 @@ function peerstuff(){
   const button = document.getElementById("joinbtn");
   button.onclick = () => {
     p.connect_to(myinput.value)
+  }
+
+  const rightbtn = document.getElementById('right');
+  rightbtn.onclick = () => {
+    kart.input(1, 0);
+  }
+
+  const leftbtn = document.getElementById('left');
+  leftbtn.onclick = () => {
+    kart.input(-1, 0);
   }
 }
 
